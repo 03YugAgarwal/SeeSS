@@ -19,7 +19,7 @@ const StudentCompainItem = (props) => {
       <li>complaintDate: {complaintDate}</li>
       <li>complaintDescription: {complaintDescription}</li>
       <li>complaintSeverity: {complaintSeverity}</li>
-      <li>isResolved: {isResolved}</li>
+      <li>isResolved: {""+isResolved}</li>
       <li>studentId: {studentId}</li>
       <li>wardenId: {wardenId}</li>
     </ul>

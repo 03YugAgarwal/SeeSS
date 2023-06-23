@@ -6,6 +6,10 @@ import WardenLeave from "./WardenLeave";
 import WardenAcceptLeave from "./WardenAcceptLeave";
 import styles from './Warden.module.css';
 import WardenRejectLeave from "./WardenRejectLeave";
+import WardenComplaint from "./WardenComplaint";
+import WardenComplaintAccept from "./WardenComplaintAccept";
+import WardenComplaintReject from "./WardenComplaintReject";
+import StudentRoomDetails from "../student/StudentRoomDetails";
 
 const Warden = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,6 +40,10 @@ const Warden = () => {
           <WardenLeave />
           <WardenAcceptLeave />
           <WardenRejectLeave />
+          <WardenComplaint />
+          <WardenComplaintAccept />
+          <WardenComplaintReject />
+          {/* <StudentRoomDetails /> */}
         </>
       )}
       {!isLoggedIn && <Link className={styles.link} to="/wardenLogin">Login</Link>}

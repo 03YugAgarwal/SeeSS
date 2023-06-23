@@ -46,7 +46,7 @@ const AllCourses = () => {
           )}
         </>
       )}
-      <Button onClick={manageCourses}>Show Courses</Button>
+      <Button onClick={manageCourses}>Show All Courses</Button>
     </div>
   );
 };

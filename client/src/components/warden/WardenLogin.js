@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
 import { useNavigate } from "react-router-dom";
-
-
+import styles from './WardenLogin.module.css'
 const WardenLogin = () => {
     const navigate = useNavigate();
   const [regno, setRegno] = useState("");
@@ -61,8 +60,11 @@ const WardenLogin = () => {
   };
 
   return (
-    <div>
-      <h2>Warden Login</h2>
+    <div className={styles.div}>
+      <div className={styles.Ward}>
+        <ul>
+        <li><h2>Warden Login</h2></li>
+      <li>
       <form action="">
         <Input value={regno} onChange={handleRegno} placeholder="Block" />
         <Input
@@ -72,6 +74,12 @@ const WardenLogin = () => {
         />
         <Button onClick={handleLogin}>Log In</Button>
       </form>
+      </li>
+        </ul>
+      
+
+      </div>
+      
     </div>
   );
 };

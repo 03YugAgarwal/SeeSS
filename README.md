@@ -20,3 +20,5 @@
 /api/v1/warden/complaint/
 /api/v1/warden/complaint/accept/{id}
 /api/v1/warden/complaint/accept/{id}
+/api/v1/warden/room-details/create
+

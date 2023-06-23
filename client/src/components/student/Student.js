@@ -28,29 +28,7 @@ const Student = () => {
 
   return (
     <>
-      <h1 className={styles.greet}>Student Portal</h1>
-      <div className={styles.card}>
-        {isLoggedIn && (
-          <>
-            <Button onClick={handleLogOut}>Logout</Button>
-            <StudentLeave />
-            <StudentComplaints />
-            <StudentRoomDetails />
-            <StudentMessDetails />
-          </>
-        )}
-
-        {!isLoggedIn && (
-          <>
-            <div>
-              <Link to="/studentLogin">Login</Link>
-            </div>
-            <div>
-              <Link to="/studentSignUp">SignUP</Link>
-            </div>
-          </>
-        )}
-      </div>
+    
     <div className={styles.cards}>  
     <h1 className={styles.greet}>Student Portal</h1>
 

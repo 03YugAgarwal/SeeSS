@@ -31,7 +31,7 @@ const StudentDeleteLeave = () => {
 
   return (
     <div>
-      <Input placeholer="ID" value={id} onChange={handleIDChange} />
+      <Input placeholder="ID" value={id} onChange={handleIDChange} />
       <Button onClick={handleDelete}>Delete</Button>
     </div>
   );

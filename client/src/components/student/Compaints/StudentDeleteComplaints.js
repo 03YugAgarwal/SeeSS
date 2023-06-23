@@ -11,10 +11,10 @@ const StudentDeleteComplaint = () => {
 
   const handleDelete = () => {
     const token = localStorage.getItem("token");
-    fetch("http://localhost:8000/api/v1/student/leave", {
+    fetch("http://localhost:8000/api/v1/student/complaint", {
       method: "DELETE",
       body: JSON.stringify({
-        leaveID: id
+        complaintId: id
       }),
       headers: {
         Authorization: "Bearer " + token,
@@ -31,7 +31,7 @@ const StudentDeleteComplaint = () => {
 
   return (
     <div>
-      <Input placeholer="ID" value={id} onChange={handleIDChange} />
+      <Input placeholder="ID" value={id} onChange={handleIDChange} />
       <Button onClick={handleDelete}>Delete</Button>
     </div>
   );

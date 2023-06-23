@@ -40,13 +40,13 @@ const handleDate = (e) => {
   const handleNewLeave = () => {
 
     const token = localStorage.getItem("token");
-    fetch("http://localhost:8000/api/v1/student/leave", {
+    fetch("http://localhost:8000/api/v1/student/complaint", {
       method: "POST",
       body: JSON.stringify({
-        leaveType: leaveDetails.leaveType,
-        leaveDate: leaveDetails.leaveDate,
-        leaveTime: leaveDetails.leaveTime,
-        leaveDuration: leaveDetails.leaveDuration
+        complaintType: leaveDetails.leaveType,
+        complaintDate: leaveDetails.leaveDate,
+        complaintDescription: leaveDetails.leaveTime,
+        complaintSeverity: leaveDetails.leaveDuration
       }),
       headers: {
         Authorization: "Bearer " + token,
@@ -64,12 +64,12 @@ const handleDate = (e) => {
 
   return (
     <div>
-        <h3>New Leave</h3>
+        <h3>New Complaint</h3>
       <Input onChange={handleType} value={leaveDetails.leaveType} placeholder="Type"/>
       <Input onChange={handleDate} value={leaveDetails.leaveDate} placeholder="Date"/>
-      <Input onChange={handleTime} value={leaveDetails.leaveTime} placeholder="Time"/>
-      <Input onChange={handleDuration} value={leaveDetails.leaveDuration} placeholder="Duration"/>
-      <Button onClick={handleNewLeave}>New Leave</Button>
+      <Input onChange={handleTime} value={leaveDetails.leaveTime} placeholder="Description"/>
+      <Input onChange={handleDuration} value={leaveDetails.leaveDuration} placeholder="Severity"/>
+      <Button onClick={handleNewLeave}>New Complaint</Button>
     </div>
   );
 };

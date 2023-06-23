@@ -3,12 +3,11 @@ import React from "react";
 const StudentCompainItem = (props) => {
   const {
     id,
-    type,
-    date,
-    time,
-    duration,
-    isApproved,
-    isRejected,
+    complaintType,
+    complaintDate,
+    complaintDescription,
+    complaintSeverity,
+    isResolved,
     studentId,
     wardenId,
   } = props.e;
@@ -16,12 +15,11 @@ const StudentCompainItem = (props) => {
   return (
     <ul>
       <li>ID: {id}</li>
-      <li>Type: {type}</li>
-      <li>Date: {date}</li>
-      <li>Time: {time}</li>
-      <li>Duration: {duration}</li>
-      <li>isApproved: {isApproved}</li>
-      <li>isRejected: {isRejected}</li>
+      <li>complaintType: {complaintType}</li>
+      <li>complaintDate: {complaintDate}</li>
+      <li>complaintDescription: {complaintDescription}</li>
+      <li>complaintSeverity: {complaintSeverity}</li>
+      <li>isResolved: {isResolved}</li>
       <li>studentId: {studentId}</li>
       <li>wardenId: {wardenId}</li>
     </ul>

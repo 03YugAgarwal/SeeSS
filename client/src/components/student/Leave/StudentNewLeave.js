@@ -64,6 +64,7 @@ const handleDate = (e) => {
 
   return (
     <div>
+        <h3>New Leave</h3>
       <Input onChange={handleType} value={leaveDetails.leaveType} placeholder="Type"/>
       <Input onChange={handleDate} value={leaveDetails.leaveDate} placeholder="Date"/>
       <Input onChange={handleTime} value={leaveDetails.leaveTime} placeholder="Time"/>

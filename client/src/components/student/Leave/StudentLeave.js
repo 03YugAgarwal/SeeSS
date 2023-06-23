@@ -3,6 +3,7 @@ import StudentLeaveItem from "./StudentLeaveItem";
 import Button from "../../UI/Button";
 import StudentNewLeave from "./StudentNewLeave";
 import StudentUpdateLeave from "./StudentUpdateLeave";
+import StudentDeleteLeave from "./StudentDeleteLeave";
 
 const StudentLeave = () => {
   const [leave, setLeave] = useState([]);
@@ -36,6 +37,7 @@ const StudentLeave = () => {
 
   return (
     <div>
+      <h3>Leaves:</h3>
       {!loading && isLeave ? (
         <ul>
           {leave.data.map((e) => {
@@ -48,6 +50,7 @@ const StudentLeave = () => {
       
         <StudentNewLeave />
         <StudentUpdateLeave />
+        <StudentDeleteLeave />
 
 
     </div>

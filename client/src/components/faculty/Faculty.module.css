@@ -1,0 +1,28 @@
+.head{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+
+.signup{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.h1{
+    padding: 20px;
+background-color: blueviolet;
+border-radius: 30px;
+}
+.card{
+    margin-top: 200px;
+}

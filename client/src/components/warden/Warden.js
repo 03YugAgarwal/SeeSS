@@ -4,6 +4,7 @@ import Button from "../UI/Button";
 import WardenInfo from "./WardenInfo";
 import WardenLeave from "./WardenLeave";
 import WardenAcceptLeave from "./WardenAcceptLeave";
+import WardenRejectLeave from "./WardenRejectLeave";
 
 const Warden = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,6 +33,7 @@ const Warden = () => {
           <WardenInfo />
           <WardenLeave />
           <WardenAcceptLeave />
+          <WardenRejectLeave />
         </>
       )}
       {!isLoggedIn && <Link to="/wardenLogin">Login</Link>}

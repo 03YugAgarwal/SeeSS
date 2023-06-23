@@ -3,25 +3,26 @@ import React from "react";
 const StudentLeaveItem = (props) => {
   const {
     id,
-    type,
-    date,
-    time,
-    duration,
+    leaveType,
+    leaveDate,
+    leaveTime,
+    leaveDuration,
     isApproved,
     isRejected,
     studentId,
     wardenId,
   } = props.e;
+  // console.log(time);
 
   return (
     <ul>
       <li>ID: {id}</li>
-      <li>Type: {type}</li>
-      <li>Date: {date}</li>
-      <li>Time: {time}</li>
-      <li>Duration: {duration}</li>
-      <li>isApproved: {isApproved}</li>
-      <li>isRejected: {isRejected}</li>
+      <li>Type: {leaveType}</li>
+      <li>Date: {leaveDate}</li>
+      <li>Time: {leaveTime}</li>
+      <li>Duration: {leaveDuration}</li>
+      <li>isApproved: {""+isApproved}</li>
+      <li>isRejected: {""+isRejected}</li>
       <li>studentId: {studentId}</li>
       <li>wardenId: {wardenId}</li>
     </ul>

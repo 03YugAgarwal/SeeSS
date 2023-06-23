@@ -12,6 +12,7 @@ import StudentRegister from "./StudentRegister";
 import StudentRegistered from "./StudentRegistered";
 import AllCourses from "./AllCourses";
 import AddCourse from "./AddCourse";
+import StudentInfo from "./StudentInfo";
 const Student = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -39,6 +40,7 @@ const Student = () => {
         {isLoggedIn && (
           <>
             <Button onClick={handleLogOut}>Logout</Button>
+            <StudentInfo />
             <StudentLeave />
             <StudentComplaints />
             <StudentMessDetails />

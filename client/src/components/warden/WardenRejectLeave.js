@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
 
-const WardenAcceptLeave = () => {
+const WardenRejectLeave = () => {
   const [id, setId] = useState("");
 
   const handleChange = (e) => {
@@ -10,7 +10,7 @@ const WardenAcceptLeave = () => {
   };
   const handleAccept = () => {
     const token = localStorage.getItem("token");
-    fetch(`http://localhost:8000/api/v1/warden/leave/accept/${id}`, {
+    fetch(`http://localhost:8000/api/v1/warden/leave/reject/${id}`, {
       method: "PATCH",
       headers: {
         Authorization: "Bearer " + token,
@@ -29,11 +29,11 @@ const WardenAcceptLeave = () => {
 
   return (
     <div>
-      <h6>Accept Leave: </h6>
+      <h6>Reject Leave: </h6>
       <Input placeholder="id" value={id} onChange={handleChange} />
-      <Button onClick={handleAccept}>Accept</Button>
+      <Button onClick={handleAccept}>Reject</Button>
     </div>
   );
 };
 
-export default WardenAcceptLeave;
+export default WardenRejectLeave;

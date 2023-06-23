@@ -58,7 +58,6 @@ const FacultyLogin = () => {
       });
     
       navigate("/faculty");
-      window.location.reload();
   };
 
   return (

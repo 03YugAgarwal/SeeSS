@@ -57,7 +57,6 @@ const StudentLogin = () => {
         console.error("Error:", error);
       });
       navigate("/student");
-      window.location.reload();
 
   };
 

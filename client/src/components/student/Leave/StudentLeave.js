@@ -23,7 +23,7 @@ const StudentLeave = () => {
         // console.log(data);
         setLoading(false);
         setLeave(data);
-        console.log(data);
+        // console.log(data);
         setIsLeave(true);
         if (leave == null) {
           setIsLeave(false);

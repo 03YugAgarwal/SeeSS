@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
-
+import styles from './AddCourse.module.css';
 const AddCourse = () => {
   const [value, setValue] = useState("");
 
@@ -37,7 +37,7 @@ const AddCourse = () => {
   };
 
   return (
-    <div>
+    <div className={styles.courseadd}>
       <h3>New course</h3>
       <Input placeholder="CourseId" onChange={handleChange} value={value} />
       <Button onClick={handleSubmit}>Register New Course</Button>

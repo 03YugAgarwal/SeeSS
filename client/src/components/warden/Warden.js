@@ -4,6 +4,7 @@ import Button from "../UI/Button";
 import WardenInfo from "./WardenInfo";
 import WardenLeave from "./WardenLeave";
 import WardenAcceptLeave from "./WardenAcceptLeave";
+import styles from './Warden.module.css';
 
 const Warden = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,9 +24,10 @@ const Warden = () => {
     window.location.reload();
   };
 
-  return (
-    <div>
-      <h2>Warden</h2>
+  return (<>
+  <h1 className={styles.head}>Warden</h1>
+    <div className={styles.login}>
+      
       {isLoggedIn && (
         <>
           <Button onClick={handleLogout}>Logout</Button>
@@ -34,8 +36,9 @@ const Warden = () => {
           <WardenAcceptLeave />
         </>
       )}
-      {!isLoggedIn && <Link to="/wardenLogin">Login</Link>}
+      {!isLoggedIn && <Link className={styles.link} to="/wardenLogin">Login</Link>}
     </div>
+    </>
   );
 };
 

@@ -1,0 +1,19 @@
+.head{
+display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;
+}
+.login{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.link{
+    padding: 20px;
+background-color: blueviolet;
+border-radius: 30px;
+}

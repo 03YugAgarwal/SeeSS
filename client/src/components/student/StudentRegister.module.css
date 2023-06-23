@@ -1,7 +1,53 @@
-div{
-    display:flexbox;
-    box-align: center;
-}
-div form{
-    align-items: flex-start;
-}
+.signupContainer {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputContainer {
+    margin-bottom: 10px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .inputContainer li {
+    margin-bottom: 10px;
+    list-style: none;
+  }
+  
+  .inputContainer li:last-child {
+    margin-bottom: 0;
+
+  }
+  
+  .inputHalfWidth {
+    width: calc(50% - 5px);
+  }
+  
+  .inputFullWidth {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    text-align: center;
+    border-color: black;
+    border-style: dotted;
+    border-radius: 50px;
+    background-color: blueviolet;
+  }
+  

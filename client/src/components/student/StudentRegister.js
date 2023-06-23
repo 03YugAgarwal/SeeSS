@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 
+import styles from './StudentRegister.module.css'
+
 const StudentRegister = () => {
   const [userDetails, setUserDetails] = useState({
     name: "",
@@ -46,21 +48,22 @@ const StudentRegister = () => {
 
   const handleSubmit = (e) => {
 
+    e.preventDefault();
 
     if(!userDetails.name || !userDetails.regno || !userDetails.roomno || !userDetails.password || !userDetails.block){
       alert("Fill all things")
       return
     }
 
-    if(userDetails.regno.length < 9){
-      alert('Reg No should be of length greater than or equal to 9')
+    if(userDetails.regno.length < 9 || userDetails.regno.length > 9 ){
+      alert('Reg No should be of length equal to 9')
       return;
     }
     if(userDetails.password.length < 8){
       alert('Password should be of length greater than or equal to 8')
       return;
     }
-    if(userDetails.name.length < 8){
+    if(userDetails.name.length < 3){
       alert('Name should be of length greater than or equal to 3')
       return;
     }
@@ -70,7 +73,6 @@ const StudentRegister = () => {
     }
 
 
-    e.preventDefault();
     console.log(userDetails);
     fetch("http://localhost:8000/api/v1/student/auth/register", {
       method: "POST",
@@ -96,39 +98,44 @@ const StudentRegister = () => {
   };
 
   return (
-    <div>
+    <div className={styles.div}>
       <form action="">
         <h2>Student Register</h2>
-        <Input
-          type="text"
-          onChange={handleOnName}
-          value={userDetails.name}
-          placeholder="Name"
-        />
-        <Input
-          type="text"
-          onChange={handleOnReg}
-          value={userDetails.regno}
-          placeholder="RegNo"
-        />
-        <Input
-          type="text"
-          onChange={handleOnBlock}
-          value={userDetails.block}
-          placeholder="Block"
-        />
-        <Input
-          type="text"
-          onChange={handleOnPassword}
-          value={userDetails.password}
-          placeholder="Password"
-        />
-        <Input
-          type="text"
-          onChange={handleOnRoomNo}
-          value={userDetails.roomno}
-          placeholder="RoomNo"
-        />
+        <div className={styles.inputContainer}>
+          <ul>
+            
+          <li><Input
+            type="text"
+            onChange={handleOnName}
+            value={userDetails.name}
+            placeholder="Name"
+          /></li>
+          <li><Input
+            type="text"
+            onChange={handleOnReg}
+            value={userDetails.regno}
+            placeholder="RegNo"
+          /></li>
+          <li><Input
+            type="text"
+            onChange={handleOnBlock}
+            value={userDetails.block}
+            placeholder="Block"
+          /></li>
+          <li><Input
+            type="text"
+            onChange={handleOnPassword}
+            value={userDetails.password}
+            placeholder="Password"
+          /></li>
+          <li><Input
+            type="text"
+            onChange={handleOnRoomNo}
+            value={userDetails.roomno}
+            placeholder="RoomNo"
+          /></li>
+          </ul>
+        </div>
         <Button onClick={handleSubmit}>Register</Button>
       </form>
     </div>

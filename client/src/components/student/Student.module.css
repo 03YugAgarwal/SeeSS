@@ -4,26 +4,27 @@
     justify-content: center;
     text-align: center;
 }
-.crad{
+.cards{
+margin: 10%;
+}
+.card{
 display: flex;
+border-radius: 30px;
+background-color: blueviolet;
+padding: 30px;
 }
 .card1{
     align-items: center;
 display: flex;
     justify-content: center;
     text-align: center;
-    background-color: blueviolet;
-    width: 200px;
-    margin:100px;
-    border-radius: 30px;
+    
+    
 }
 .card2{
     align-items: center;
 display: flex;
     justify-content: center;
     text-align: center;
-    background-color: blueviolet;
-    width: 200px ;
-    border-radius: 30px;
-    margin:100px;
+    
 }

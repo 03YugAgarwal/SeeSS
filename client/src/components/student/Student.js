@@ -51,14 +51,15 @@ const Student = () => {
           </>
         )}
       </div>
+    <div className={styles.cards}>  
     <h1 className={styles.greet}>Student Portal</h1>
 
-    <div className={styles.card}>  
+    
       {isLoggedIn && <Button onClick={handleLogOut}>Logout</Button>}
       {!isLoggedIn && <>
-       <div className={styles.card1}><h1><Link to="/studentLogin">Login</Link></h1></div> 
+       <div className={styles.card1}><h1 className={styles.card}><Link to="/studentLogin">Login</Link></h1></div> 
 
-       <div className={styles.card2}><h1><Link to="/studentSignUp">SignUP</Link></h1></div> 
+       <div className={styles.card2}><h1 className={styles.card}><Link to="/studentSignUp">SignUP</Link></h1></div> 
       </>}
     </div>
     </>

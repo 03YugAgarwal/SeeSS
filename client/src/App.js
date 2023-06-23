@@ -17,7 +17,7 @@ const App = () => {
     <div>
       <StudentRegister />
       <StudentLogin />
-      <StudentInfo />
+      {/* <StudentInfo /> */}
       <Button onClick={handleLogout}>Logout</Button>
     </div>
   )

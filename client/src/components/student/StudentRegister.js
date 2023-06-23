@@ -67,7 +67,7 @@ const StudentRegister = () => {
       alert('Name should be of length greater than or equal to 3')
       return;
     }
-    if(userDetails.block !== 'A' || userDetails.block !== 'B' || userDetails.block !== 'C' || userDetails.block !== 'D'){
+    if( userDetails && (userDetails.block !== "A" && userDetails.block !== "B" && userDetails.block !== "C" && userDetails.block !== "D")){
       alert('Blocks must be A or B or C or D')
       return;
     }

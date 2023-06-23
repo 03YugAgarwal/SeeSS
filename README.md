@@ -19,6 +19,6 @@
 /api/v1/warden/leave/
 /api/v1/warden/complaint/
 /api/v1/warden/complaint/accept/{id}
-/api/v1/warden/complaint/accept/{id}
+/api/v1/warden/complaint/reject/{id}
 /api/v1/warden/room-details/create
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import StudentLeaveItem from "./StudentLeaveItem";
 import Button from "../../UI/Button";
 import StudentNewLeave from "./StudentNewLeave";
+import StudentUpdateLeave from "./StudentUpdateLeave";
 
 const StudentLeave = () => {
   const [leave, setLeave] = useState([]);
@@ -38,7 +39,7 @@ const StudentLeave = () => {
       {!loading && isLeave ? (
         <ul>
           {leave.data.map((e) => {
-            return <StudentLeaveItem e={e} />;
+            return <StudentLeaveItem key={e.id} e={e} />;
           })}
         </ul>
       ) : (
@@ -46,6 +47,7 @@ const StudentLeave = () => {
       )}
       
         <StudentNewLeave />
+        <StudentUpdateLeave />
 
 
     </div>

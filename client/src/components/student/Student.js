@@ -7,6 +7,11 @@ import StudentComplaints from "./Compaints/StudentComplaints";
 import styles from "./Student.module.css";
 import StudentRoomDetails from "./StudentRoomDetails";
 import StudentMessDetails from "./StudentMessDetails";
+import CourseComponent from "./CourseComponent";
+import StudentRegister from "./StudentRegister";
+import StudentRegistered from "./StudentRegistered";
+import AllCourses from "./AllCourses";
+import AddCourse from "./AddCourse";
 const Student = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -38,6 +43,9 @@ const Student = () => {
             <StudentComplaints />
             <StudentMessDetails />
             <StudentRoomDetails />
+            <StudentRegistered />
+            <AllCourses />
+            <AddCourse />
           </>
         )}
         {!isLoggedIn && (

@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import Button from '../UI/Button'
 import StudentCompainItem from '../student/Compaints/StudentCompainItem'
 import StudentLeaveItem from '../student/Leave/StudentLeaveItem'
-
+import styles from './Wardeninfo.module.css';
 const WardenInfo = () => {
 
     const [loading, setLoading] = useState(true)
@@ -40,7 +40,7 @@ const showDetails = () => {
 }
 
   return (
-    <div>
+    <div className={styles.info}>
         <Button onClick={showDetails}>My Details</Button>
         {show && <>
             <h1>My Details</h1>

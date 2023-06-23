@@ -5,6 +5,8 @@ import StudentLeave from "./Leave/StudentLeave";
 import StudentComplaints from "./Compaints/StudentComplaints"
 // import Button from '../UI/Button'
 import styles from "./Student.module.css";
+import StudentRoomDetails from "./StudentRoomDetails";
+import StudentMessDetails from "./StudentMessDetails";
 const Student = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -33,6 +35,8 @@ const Student = () => {
             <Button onClick={handleLogOut}>Logout</Button>
             <StudentLeave />
             <StudentComplaints />
+            <StudentRoomDetails />
+            <StudentMessDetails />
           </>
         )}
 

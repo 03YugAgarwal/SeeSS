@@ -14,6 +14,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Student from "./components/student/Student";
 import Faculty from "./components/faculty/Faculty";
 import Warden from "./components/warden/Warden";
+import WardenLogin from "./components/warden/WardenLogin";
 
 const App = () => {
   const handleLogout = () => {
@@ -36,11 +37,11 @@ const App = () => {
         <Route path="/student" element={<Student />} />
         <Route path="/faculty" element={<Faculty />} />
         <Route path="/warden" element={<Warden />} />
+        <Route path="/wardenLogin" element={<WardenLogin />} />
         <Route path="/facultyLogin" element={<FacultyLogin/>} />
         <Route path="/facultySignUp" element={<FacultyRegister/>} />
         <Route path="/studentLogin" element={<StudentLogin/>} />
         <Route path="/studentSignUp" element={<StudentRegister/>} />
-
       </Routes>
     </BrowserRouter>
   );

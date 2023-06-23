@@ -2,7 +2,8 @@ h3 {
     padding-left:15px; 
 }
 .div{
-    margin-bottom:100px;
+    width:100%;
+    margin-bottom:30%;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +14,7 @@ h3 {
     color: white;
 }
 .div ul{
+    margin:20px;
     background-color: blueviolet;
     list-style:disc;
     padding-top:2px;

@@ -35,7 +35,7 @@ const StudentLeave = () => {
 
 
 
-  return (
+  return (<>
     <div className={styles.div}>
       
       <h3>Leaves:</h3>
@@ -53,8 +53,14 @@ const StudentLeave = () => {
         <StudentUpdateLeave />
         <StudentDeleteLeave />
 
-
+        
     </div>
+    
+     <div>
+<h1></h1>
+    </div>
+    </>
+   
   );
 };
 

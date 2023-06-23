@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
 import { useNavigate } from "react-router-dom";
-
+import styles from './FacultyLogin.module.css'
 
 const FacultyLogin = () => {
     const navigate = useNavigate();
@@ -62,17 +62,22 @@ const FacultyLogin = () => {
   };
 
   return (
-    <div>
+    <div className={styles.div}>
       <h2>Faculty Login</h2>
+      <div className={styles.inputContainer}>
       <form action="">
-        <Input value={regno} onChange={handleRegno} placeholder="EmpID" />
+        
+        <ul>
+        <li><Input value={regno} onChange={handleRegno} placeholder="EmpID" />
         <Input
           value={password}
           onChange={handlePassword}
           placeholder="Password"
-        />
-        <Button onClick={handleLogin}>Log In</Button>
+        /></li>
+        <li><Button onClick={handleLogin}>Log In</Button></li>
+        </ul>
       </form>
+      </div>
     </div>
   );
 };

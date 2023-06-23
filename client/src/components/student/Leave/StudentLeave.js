@@ -4,7 +4,7 @@ import Button from "../../UI/Button";
 import StudentNewLeave from "./StudentNewLeave";
 import StudentUpdateLeave from "./StudentUpdateLeave";
 import StudentDeleteLeave from "./StudentDeleteLeave";
-
+import styles from "./StudentLeave.module.css";
 const StudentLeave = () => {
   const [leave, setLeave] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -36,7 +36,8 @@ const StudentLeave = () => {
 
 
   return (
-    <div>
+    <div className={styles.div}>
+      
       <h3>Leaves:</h3>
       {!loading && isLeave ? (
         <ul>

@@ -38,6 +38,9 @@ const App = () => {
         <Route path="/warden" element={<Warden />} />
         <Route path="/facultyLogin" element={<FacultyLogin/>} />
         <Route path="/facultySignUp" element={<FacultyRegister/>} />
+        <Route path="/studentLogin" element={<StudentLogin/>} />
+        <Route path="/studentSignUp" element={<StudentRegister/>} />
+
       </Routes>
     </BrowserRouter>
   );

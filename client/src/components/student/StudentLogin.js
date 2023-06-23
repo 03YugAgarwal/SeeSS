@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
 import styles from "./StudentLogin.module.css";
+import { useNavigate } from "react-router-dom";
+
 
 const StudentLogin = () => {
+  const navigate = useNavigate();
   const [regno, setRegno] = useState("");
   const [password, setPassword] = useState("");
 
@@ -53,7 +56,8 @@ const StudentLogin = () => {
         // Handle any errors that occurred during the request
         console.error("Error:", error);
       });
-    
+      navigate("/student");
+      window.location.reload();
 
   };
 

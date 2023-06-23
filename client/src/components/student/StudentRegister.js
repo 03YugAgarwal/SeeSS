@@ -3,8 +3,11 @@ import Button from "../UI/Button";
 import Input from "../UI/Input";
 
 import styles from './StudentRegister.module.css'
+import { useNavigate } from "react-router-dom";
+
 
 const StudentRegister = () => {
+  const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState({
     name: "",
     regno: "",
@@ -95,6 +98,8 @@ const StudentRegister = () => {
         // Handle any errors that occurred during the request
         console.error("Error:", error);
       });
+
+      navigate("/studentLogin");
   };
 
   return (

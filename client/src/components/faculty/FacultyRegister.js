@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./FacultyRegister.module.css"
 
 const FacultyRegister = () => {
+    const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState({
     name: "",
     empId: "",
@@ -84,6 +86,7 @@ const FacultyRegister = () => {
         // Handle any errors that occurred during the request
         console.error("Error:", error);
       });
+      navigate("/facultyLogin");
   };
 
   return (

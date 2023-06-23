@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
+import { useNavigate } from "react-router-dom";
+
 
 const FacultyLogin = () => {
+    const navigate = useNavigate();
   const [regno, setRegno] = useState("");
   const [password, setPassword] = useState("");
 
@@ -54,7 +57,8 @@ const FacultyLogin = () => {
         console.error("Error:", error);
       });
     
-
+      navigate("/faculty");
+      window.location.reload();
   };
 
   return (

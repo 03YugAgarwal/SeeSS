@@ -1,0 +1,9 @@
+.input{
+    text-overflow: clip;
+    
+  padding:10px;
+  border-radius:10px;
+  box-shadow: -5px 5px;
+  margin: 15px;
+
+}

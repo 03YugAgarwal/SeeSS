@@ -1,0 +1,7 @@
+div{
+    display:flexbox;
+    box-align: center;
+}
+div form{
+    align-items: flex-start;
+}

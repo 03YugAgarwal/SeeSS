@@ -1,0 +1,21 @@
+h3 {
+    padding-left:15px; 
+}
+.div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    text-align: center;
+    border-color: black;
+    border-style: dotted;
+    border-radius: 50px;
+    background-color: blueviolet;
+    color: white;
+}
+.div ul{
+    background-color: blueviolet;
+    list-style:disc;
+    padding-top:2px;
+    padding-bottom:2px;
+}

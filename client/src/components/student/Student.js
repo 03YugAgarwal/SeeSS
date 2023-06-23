@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../UI/Button";
 import StudentLeave from "./Leave/StudentLeave";
-import StudentComplaints from "./Compaints/StudentComplaints"
+import StudentComplaints from "./Compaints/StudentComplaints";
 // import Button from '../UI/Button'
 import styles from "./Student.module.css";
 import StudentRoomDetails from "./StudentRoomDetails";
@@ -28,18 +28,34 @@ const Student = () => {
 
   return (
     <>
-    
-    <div className={styles.cards}>  
-    <h1 className={styles.greet}>Student Portal</h1>
+      <div className={styles.cards}>
+        <h1 className={styles.greet}>Student Portal</h1>
 
-    
-      {isLoggedIn && <Button onClick={handleLogOut}>Logout</Button>}
-      {!isLoggedIn && <>
-       <div className={styles.card1}><h1 className={styles.card}><Link to="/studentLogin">Login</Link></h1></div> 
+        {isLoggedIn && (
+          <>
+            <Button onClick={handleLogOut}>Logout</Button>
+            <StudentLeave />
+            <StudentComplaints />
+            <StudentMessDetails />
+            <StudentRoomDetails />
+          </>
+        )}
+        {!isLoggedIn && (
+          <>
+            <div className={styles.card1}>
+              <h1 className={styles.card}>
+                <Link to="/studentLogin">Login</Link>
+              </h1>
+            </div>
 
-       <div className={styles.card2}><h1 className={styles.card}><Link to="/studentSignUp">SignUP</Link></h1></div> 
-      </>}
-    </div>
+            <div className={styles.card2}>
+              <h1 className={styles.card}>
+                <Link to="/studentSignUp">SignUP</Link>
+              </h1>
+            </div>
+          </>
+        )}
+      </div>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import styles from './StudentRoomDetails.module.css';
 const StudentRoomDetails = () => {
   const [loading, setLoading] = useState(true);
   const [details, setDetails] = useState({});
@@ -28,8 +28,8 @@ const StudentRoomDetails = () => {
     return () => {};
   }, []);
 
-  return (
-    <div>
+  return (<>
+    <div className="styles.room">
       {!loading && (
         <>
           <li>ID: {details.data.id}</li>
@@ -41,6 +41,8 @@ const StudentRoomDetails = () => {
       )}
       {loading ? <p>No Room Assigned</p> : <></>}
     </div>
+    <div><h1></h1></div>
+    </>
   );
 };
 

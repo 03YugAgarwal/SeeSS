@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import Button from '../UI/Button';
 import Input from '../UI/Input';
-
+import styles from './StudentMessDetails.module.css';
 const StudentMessDetails = () => {
 
     const [loading, setLoading] = useState(true);
@@ -59,13 +59,15 @@ const StudentMessDetails = () => {
             });
     }
 
-  return (
-    <div>
+  return (<>
+  <div><h1></h1></div>
+    <div className={styles.mess}>
         <h3>Mess Details</h3>
         {!loading && <h5>Type: {details.data}</h5>}
         <Input onChange={handleMessChange} value={details.data} />
         <Button onClick={handleBtn}>Edit</Button>
     </div>
+    </>
   )
 }
 

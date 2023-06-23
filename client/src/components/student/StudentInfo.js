@@ -4,40 +4,44 @@ import Button from "../UI/Button";
 const StudentInfo = () => {
   const [details, setDetails] = useState("");
 
-  let token = ""
+  const [loading, setLoading] = useState(true);
 
-  const handleMyInfo = () => {
-
-    token = localStorage.getItem("token");
-
+  useEffect(() => {
+    const token = localStorage.getItem("token");
     fetch("http://localhost:8000/api/v1/student/me", {
-        method: "GET",
-        headers: {
-          Authorization: "Bearer " + token,
-        },
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+        setLoading(false);
+        setDetails(data);
       })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          setDetails(data);
-        })
-        .catch((error) => console.error(error));
-  }
+      .catch((error) => console.error(error));
+  }, []);
 
-  return <div>
-    <h1>My Info</h1>
-    <h4>General Info</h4>
-    <p>Name: {details.data.name}</p>
-    <p>RegNo: {details.data.regNo}</p>
-    <p>Block: {details.data.block}</p>
-    <p>RoomNo: {details.data.roomNo}</p>
-    <p>Mess: {details.data.messType}</p>
+  const handleWarden = () => {};
 
-    <Button onClick={handleMyInfo}>My Info</Button>
+  return (
+    <div>
+      {!loading && <div>
+        <h1>My Info</h1>
+        <h4>General Info</h4>
+        <p>Name: {details.data.name}</p>
+        <p>RegNo: {details.data.regNo}</p>
+        <p>Block: {details.data.block}</p>
+        <p>RoomNo: {details.data.roomNo}</p>
+        <p>Mess: {details.data.messType}</p>
+      </div>}
 
-    <Button>Warden Info</Button>
+      {/* <Button onClick={handleMyInfo}>My Info</Button> */}
 
-  </div>;
+      <Button onClick={handleWarden}>Warden Info</Button>
+    </div>
+  );
 };
 
 export default StudentInfo;

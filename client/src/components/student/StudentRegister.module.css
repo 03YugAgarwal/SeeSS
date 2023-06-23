@@ -50,4 +50,8 @@
     border-radius: 50px;
     background-color: blueviolet;
   }
-  
+  .ul{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

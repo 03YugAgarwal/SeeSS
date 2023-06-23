@@ -7,9 +7,15 @@ const Student = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("type")) {
-      setIsLoggedIn(true);
-    }
+
+    const timer = setTimeout(() =>{
+      if (localStorage.getItem("type")) {
+        setIsLoggedIn(true);
+      }
+    },1000)
+
+    return () => clearTimeout(timer);
+
   }, []);
 
 

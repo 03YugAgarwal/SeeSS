@@ -5,11 +5,14 @@ import Button from "../UI/Button";
 
 const Faculty = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   useEffect(() => {
-    if (localStorage.getItem("type")) {
-      setIsLoggedIn(true);
-    }
+    const timer = setTimeout(() => {
+      if (localStorage.getItem("type")) {
+        setIsLoggedIn(true);
+      }
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleLogOut = () => {
@@ -21,11 +24,13 @@ const Faculty = () => {
   return (
     <div>
       <h2>Faculty</h2>
-      {isLoggedIn&&<Button onClick={handleLogOut}>Log Out</Button>}
-      {!isLoggedIn && <>
-        <Link to="/facultyLogin">Login</Link>
-        <Link to="/facultySignUp">SignUP</Link>
-      </>}
+      {isLoggedIn && <Button onClick={handleLogOut}>Log Out</Button>}
+      {!isLoggedIn && (
+        <>
+          <Link to="/facultyLogin">Login</Link>
+          <Link to="/facultySignUp">SignUP</Link>
+        </>
+      )}
     </div>
   );
 };

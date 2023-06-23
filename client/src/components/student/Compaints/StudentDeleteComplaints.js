@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "../../UI/Input";
 import Button from "../../UI/Button";
 
-const StudentDeleteLeave = () => {
+const StudentDeleteComplaint = () => {
   const [id, setID] = useState("");
 
   const handleIDChange = (e) => {
@@ -37,4 +37,4 @@ const StudentDeleteLeave = () => {
   );
 };
 
-export default StudentDeleteLeave;
+export default StudentDeleteComplaint;

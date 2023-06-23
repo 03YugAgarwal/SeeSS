@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "../../UI/Button";
 import Input from "../../UI/Input";
 
-const StudentUpdateLeave = () => {
+const StudentUpdateComplaint = () => {
   const [leaveDetails, setLeaveDetails] = useState({
     leaveID: "",
     leaveType: "",
@@ -96,4 +96,4 @@ const StudentUpdateLeave = () => {
   );
 };
 
-export default StudentUpdateLeave;
+export default StudentUpdateComplaint;

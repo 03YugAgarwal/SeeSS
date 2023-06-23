@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../UI/Button";
 import StudentLeave from "./Leave/StudentLeave";
+import StudentComplaints from "./Compaints/StudentComplaints"
 // import Button from '../UI/Button'
 import styles from "./Student.module.css";
 const Student = () => {
@@ -31,6 +32,7 @@ const Student = () => {
           <>
             <Button onClick={handleLogOut}>Logout</Button>
             <StudentLeave />
+            <StudentComplaints />
           </>
         )}
 

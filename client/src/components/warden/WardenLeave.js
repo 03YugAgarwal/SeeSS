@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Button from '../UI/Button'
 import StudentLeaveItem from '../student/Leave/StudentLeaveItem'
-
+import styles from './WardenLeave.module.css'
 const WardenLeave = () => {
     const [show, setShow] = useState(false)
     const [loading,setLoading] = useState(true)
@@ -37,7 +37,7 @@ const WardenLeave = () => {
     }
 
   return (
-    <div>
+    <div className={styles.leaveinfo}>
         <Button onClick={showBtn}>Show Leaves</Button>
         {show && <>
             {/* <li</li> */}

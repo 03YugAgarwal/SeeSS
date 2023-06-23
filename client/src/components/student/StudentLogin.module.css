@@ -1,0 +1,14 @@
+.div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    text-align: center;
+    border-color: black;
+    border-style: dotted;
+    border-radius: 50px;
+    background-color: blueviolet;
+  }
+.div li{
+    list-style:none;
+}

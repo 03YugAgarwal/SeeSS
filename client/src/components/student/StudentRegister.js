@@ -100,7 +100,7 @@ const StudentRegister = () => {
   return (
     <div className={styles.div}>
       <form action="">
-        <h2>Student Register</h2>
+      <h2>Student Register</h2>
         <div className={styles.inputContainer}>
           <ul>
             

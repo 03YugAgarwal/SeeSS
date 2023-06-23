@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
+import styles from "./StudentLogin.module.css";
 
 const StudentLogin = () => {
   const [regno, setRegno] = useState("");
@@ -57,15 +58,25 @@ const StudentLogin = () => {
   };
 
   return (
-    <div>
-      <h2>Student Login</h2>
+    <div className={styles.div}>
+      
       <form action="">
-        <Input value={regno} onChange={handleRegno} placeholder="RegNo" />
-        <Input
+      <ul>
+      <h2>Student Login</h2>
+        <li>
+        <Input 
+          value={regno} 
+          onChange={handleRegno} 
+          placeholder="RegNo" />
+        </li>
+        <li>
+          <Input
           value={password}
           onChange={handlePassword}
           placeholder="Password"
         />
+        </li>
+        </ul>
         <Button onClick={handleLogin}>Log In</Button>
       </form>
     </div>

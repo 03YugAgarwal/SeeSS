@@ -43,6 +43,7 @@ const FacultyLogin = () => {
       .then((response) => response.json())
       .then((json) => {
         if(json.message === "Logged in successfully"){
+            localStorage.clear()
             localStorage.setItem("token", json.token)
             localStorage.setItem("type","employee")
         }

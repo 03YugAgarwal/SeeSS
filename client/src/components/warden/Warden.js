@@ -4,7 +4,7 @@ import Button from "../UI/Button";
 import WardenInfo from "./WardenInfo";
 import WardenLeave from "./WardenLeave";
 import WardenAcceptLeave from "./WardenAcceptLeave";
-import styles from './Warden.module.css';
+import styles from "./Warden.module.css";
 import WardenRejectLeave from "./WardenRejectLeave";
 import WardenComplaint from "./WardenComplaint";
 import WardenComplaintAccept from "./WardenComplaintAccept";
@@ -30,26 +30,32 @@ const Warden = () => {
     window.location.reload();
   };
 
-  return (<>
-  <h1 className={styles.head}>Warden</h1>
-    <div className={styles.login}>
-      
-      {isLoggedIn && (
-        <>
-          <Button onClick={handleLogout}>Logout</Button>
-          <WardenInfo />
-          <WardenLeave />
-          <WardenAcceptLeave />
-          <WardenRejectLeave />
-          <WardenComplaint />
-          <WardenComplaintAccept />
-          <WardenComplaintReject />
-          {/* <StudentRoomDetails /> */}
-          <WardenRoomCreate />
-        </>
-      )}
-      {!isLoggedIn && <Link className={styles.link} to="/wardenLogin">Login</Link>}
-    </div>
+  return (
+    <>
+      <div className={styles.container}>
+        <h1 className={styles.head}>Warden</h1>
+        <div className={styles.login}>
+          {isLoggedIn && (
+            <>
+              <Button onClick={handleLogout}>Logout</Button>
+              <WardenInfo />
+              <WardenLeave />
+              <WardenAcceptLeave />
+              <WardenRejectLeave />
+              <WardenComplaint />
+              <WardenComplaintAccept />
+              <WardenComplaintReject />
+              {/* <StudentRoomDetails /> */}
+              <WardenRoomCreate />
+            </>
+          )}
+          {!isLoggedIn && (
+            <Link className={styles.link} to="/wardenLogin">
+              Login
+            </Link>
+          )}
+        </div>
+      </div>
     </>
   );
 };

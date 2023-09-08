@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Button from "../UI/Button";
 
 const StudentInfo = () => {
   const [details, setDetails] = useState("");
@@ -23,23 +22,37 @@ const StudentInfo = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  const handleWarden = () => {};
+  // const handleWarden = () => {};
 
   return (
     <div>
-      {!loading && <div>
-        <h1>My Info</h1>
-        <h4>General Info</h4>
-        <p>Name: {details.data.name}</p>
-        <p>RegNo: {details.data.regNo}</p>
-        <p>Block: {details.data.block}</p>
-        <p>RoomNo: {details.data.roomNo}</p>
-        <p>Mess: {details.data.messType}</p>
-      </div>}
+      {!loading && (
+        <div className="flex justify-center flex-col items-center border-solid border-white border-2 rounded-xl lg:w-1/3 mx-auto w-3/4 md:w-1/2 my-32">
+          <h1 className="my-4 text-4xl font-bold">My Info</h1>
+          <p className="mb-2 text-lg text-cyan-200">
+            Name: <span className="text-white">{details.data?.name}</span>
+          </p>
+          <p className="mb-2 text-lg text-cyan-200">
+            RegNo: <span className="text-white">{details.data?.regNo}</span>{" "}
+          </p>
+          <p className="mb-2 text-lg text-cyan-200">
+            Block: <span className="text-white">{details.data?.block}</span>{" "}
+          </p>
+          <p className="mb-2 text-lg text-cyan-200">
+            RoomNo: <span className="text-white">{details.data?.roomNo}</span>{" "}
+          </p>
+          <p className="mb-2 text-lg text-cyan-200">
+            Mess: <span className="text-white">{details.data?.messType}</span>
+          </p>
+        </div>
+      )}
+      {loading && (
+        <div className="spinner-container">
+          <div className="loading-spinner"></div>
+        </div>
+      )}
 
-      {/* <Button onClick={handleMyInfo}>My Info</Button> */}
-
-      <Button onClick={handleWarden}>Warden Info</Button>
+      {/* <Button onClick={handleWarden}>Warden Info</Button> */}
     </div>
   );
 };

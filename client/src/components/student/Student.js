@@ -1,30 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../UI/Button";
-import StudentLeave from "./Leave/StudentLeave";
-import StudentComplaints from "./Compaints/StudentComplaints";
-// import Button from '../UI/Button'
-import styles from "./Student.module.css";
-import StudentRoomDetails from "./StudentRoomDetails";
-import StudentMessDetails from "./StudentMessDetails";
-import CourseComponent from "./CourseComponent";
-import StudentRegister from "./StudentRegister";
-import StudentRegistered from "./StudentRegistered";
-import AllCourses from "./AllCourses";
-import AddCourse from "./AddCourse";
+
 import StudentInfo from "./StudentInfo";
+
+// import Button from '../UI/Button'
+
 const Student = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       if (localStorage.getItem("type")) {
         setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+        navigate("/studentLogin");
       }
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [navigate]);
 
   const handleLogOut = () => {
     localStorage.removeItem("token");
@@ -32,39 +29,47 @@ const Student = () => {
     window.location.reload();
   };
 
+  const listStyle =
+    "py-2 h-12 w-1/6 text-lg text-center cursor-pointer hover:bg-white hover:text-black";
+
   return (
     <>
-      <div className={styles.cards}>
-        <h1 className={styles.greet}>Student Portal</h1>
-
+      <div>
+        <nav>
+          <ul className="flex flex-wrap border-b-2">
+            <li className={listStyle} onClick={() => navigate("./leave")}>
+              Leave
+            </li>
+            <li className={listStyle} onClick={() => navigate("./compaints")}>
+              Complaints
+            </li>
+            <li className={listStyle} onClick={() => navigate("./mess")}>
+              Mess Details
+            </li>
+            <li className={listStyle} onClick={() => navigate("./room")}>
+              Room Details
+            </li>
+            <li className={listStyle} onClick={() => navigate("./allcourses")}>
+              All Courses
+            </li>
+            <li className={listStyle} onClick={() => navigate("./addcourses")}>
+              Register Course
+            </li>
+          </ul>
+        </nav>
         {isLoggedIn && (
           <>
-            <Button onClick={handleLogOut}>Logout</Button>
+            <Button
+              onClick={handleLogOut}
+              className="fixed bottom-2 left-2 w-32 h-10 border-solid mt-2 border-white border-2 rounded-lg disabled:opacity-30 hover:bg-white hover:text-black transition-all delay-75 ease-in"
+            >
+              Logout
+            </Button>
             <StudentInfo />
-            <StudentLeave />
-            <StudentComplaints />
-            <StudentMessDetails />
-            <StudentRoomDetails />
-            <StudentRegistered />
-            <AllCourses />
-            <AddCourse />
           </>
         )}
-        {!isLoggedIn && (
-          <>
-            <div className={styles.card1}>
-              <h1 className={styles.card}>
-                <Link to="/studentLogin">Login</Link>
-              </h1>
-            </div>
-
-            <div className={styles.card2}>
-              <h1 className={styles.card}>
-                <Link to="/studentSignUp">SignUP</Link>
-              </h1>
-            </div>
-          </>
-        )}
+        {!isLoggedIn && <p>Not logged in</p>}
+        <p className="italic fixed bottom-1 right-1">made by team SeeSS</p>
       </div>
     </>
   );

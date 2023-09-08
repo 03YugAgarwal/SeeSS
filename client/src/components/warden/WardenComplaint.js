@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Button from '../UI/Button'
 // import StudentLeaveItem from '../student/Leave/StudentLeaveItem'
 import StudentCompainItem from '../student/Compaints/StudentCompainItem'
-
+import styles from './WardenComplain.module.css';
 const WardenComplaint = () => {
     const [show, setShow] = useState(false)
     const [loading,setLoading] = useState(true)
@@ -38,7 +38,7 @@ const WardenComplaint = () => {
     }
 
   return (
-    <div>
+    <div className={styles.comp}>
         <Button onClick={showBtn}>Show Complaints</Button>
         {show && <>
             {/* <li</li> */}
